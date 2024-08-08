@@ -23,4 +23,4 @@ response = requests.get(url, headers=headers, auth=HTTPBasicAuth(device['Usernam
 if response.status_code == 200:
     print("Request was successful!")
 else:
-    print(response)
+    print(response.status_code)

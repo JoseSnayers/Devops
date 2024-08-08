@@ -1,0 +1,12 @@
+---
+- name: Gather Interface Details from IOS-XE Device
+  hosts: iosxe
+  gather_facts: no
+  tasks:
+    - name: Gather interface facts from the IOS-XE device
+      cisco.ios.ios_facts:
+        gather_subset: interfaces
+
+    - name: Display interface details
+      debug:
+        var: ansible_net_interfaces
